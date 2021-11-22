@@ -16,7 +16,6 @@ public class CardDealer3 {
         String[] deck = new String[numOfCards];
 
         int count = 0;
-        //Object Class Card
 
         Card card = new Card();
 
@@ -38,7 +37,6 @@ public class CardDealer3 {
         }
 
         count = 0;
-        //Object Class Player
 
         Player player = new Player();
 
