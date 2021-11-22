@@ -1,5 +1,7 @@
+package CardDealerApp;
+//Class Player
 public class Player {
     public String getPlayer() {
-        return "Player";
+        return "CardDealerApp.Player";
     }
 }
