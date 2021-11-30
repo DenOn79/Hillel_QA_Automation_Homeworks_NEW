@@ -1,7 +1,9 @@
 package logger;
 
 public class Logger {
-    public static void setLevels(LogLevels levels) {
-        System.out.println(levels.getLogLevels());
+    public static void logMessage(LogLevels level, String message) {
+        System.out.println(CurrentDate.getCurrentDate());
+        System.out.println(level.getLevel());
+        System.out.println(message);
     }
 }

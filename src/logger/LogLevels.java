@@ -6,15 +6,15 @@ public enum LogLevels {
     WARN(Colors.ANSI_YELLOW + "Warn" + Colors.ANSI_RESET),
     ERROR(Colors.ANSI_RED + "Error" + Colors.ANSI_RESET);
 
-    private String levels;
+    private String level;
 
-    LogLevels(String levels) {
+    LogLevels(String level) {
 
-        this.levels = levels;
+        this.level = level;
     }
 
-    public  String getLogLevels() {
+    public String getLevel() {
 
-        return levels;
+        return level;
     }
 }
