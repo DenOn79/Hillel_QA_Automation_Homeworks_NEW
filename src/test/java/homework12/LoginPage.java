@@ -30,7 +30,7 @@ public class LoginPage {
     }
 
     @Test(description = "Input incorrect credentials and check that login failed")
-    public void loginIncorrect() throws InterruptedException {
+    public void loginIncorrect() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
