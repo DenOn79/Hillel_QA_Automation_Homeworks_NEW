@@ -6,7 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,6 +17,7 @@ public class DropDown {
     public void openDropdown() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+        WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
 
         driver.get("https://crossbrowsertesting.github.io/hover-menu.html");
 
@@ -29,7 +32,7 @@ public class DropDown {
         action.moveToElement(secondaryDropdown).perform();
         action.moveToElement(secondaryAction).click().perform();
 
-        Thread.sleep(1000);
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class = 'jumbotron secondary-clicked']/h1")));
 
         Assert.assertEquals(secondaryTitle.getText(), "Secondary Page");
 
