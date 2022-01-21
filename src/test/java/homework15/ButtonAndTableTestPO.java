@@ -15,12 +15,8 @@ public class ButtonAndTableTestPO extends BaseTest {
         ChallengePage challengePage = openApp().goToChallengePage()
                 .clickButton()
                 .clickButtonAlert()
-                .clickButtonSuccess();
-
-        for (int i = 1; i <= 10; i++) {
-            String element = driver.findElement(By.xpath("//tbody/tr["+i+"]/td[4]")).getText();
-            System.out.println(element);
-        }
+                .clickButtonSuccess()
+                .outputTableElements();
 
     }
 
