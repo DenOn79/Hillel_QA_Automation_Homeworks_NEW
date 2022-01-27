@@ -1,6 +1,5 @@
 package homework15;
 
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import pageObjects.DownloadPage;
 import pageObjects.MainPage;
@@ -15,6 +14,8 @@ import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 public class FileTest extends BaseTest {
+
+    Path path = Paths.get("target/download/some-file.txt");
 
     @Test(description = "Download file")
     public void downloadFileTest() {
@@ -33,11 +34,9 @@ public class FileTest extends BaseTest {
         MainPage mainPage = new MainPage(driver);
         UploadPage uploadPage = openApp()
                 .goToUploadPage()
-                .selectFileToUpload(uploadFile())
+                .selectFile(getFileToUpload())
                 .submitUpload();
     }
-
-    Path path = Paths.get("target/download/some-file.txt");
 
     public void readFromFile() {
         try {
@@ -58,9 +57,8 @@ public class FileTest extends BaseTest {
        }
     }
 
-    public File uploadFile() {
-        File file = new File(String.valueOf(path)).getAbsoluteFile();
-        return file;
+    public File getFileToUpload() {
+        return new File(String.valueOf(path)).getAbsoluteFile();
     }
 
 }
