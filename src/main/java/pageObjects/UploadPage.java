@@ -19,7 +19,7 @@ public class UploadPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public UploadPage selectFileToUpload(File fileToUpload) {
+    public UploadPage selectFile(File fileToUpload) {
         chooseFileButton.sendKeys(String.valueOf(fileToUpload));
         return this;
     }
