@@ -2,7 +2,7 @@
 <suite name="Suite1" verbose="1" >
     <test name="Nopackage" >
         <classes>
-            <!-- <parameter name="param" value="testValue"/> -->
+            <!--<parameter name="browser" value="remote"/>-->
             <class name="homework15.ButtonAndTableTestPO"/>
             <class name="homework15.GeolocationTest"/>
             <class name="homework15.LoginTestPO"/>
