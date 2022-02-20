@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class GeolocationPage extends BasePage {
 
-    @FindBy(xpath = "//button[@onclick = 'getLocation()']")
+    @FindBy(xpath = "//button_test_[@onclick = 'getLocation()']")
     private WebElement buttonWhereAmI;
 
     private final By byLatitudeValue = By.xpath ("//div[@id = 'lat-value']");
