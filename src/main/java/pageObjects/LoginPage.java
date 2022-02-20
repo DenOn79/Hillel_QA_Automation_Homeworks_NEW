@@ -1,5 +1,6 @@
 package pageObjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,16 +27,19 @@ public class LoginPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Enter username")
     public LoginPage setUsername(String username) {
         userNameInput.sendKeys(username);
         return this;
     }
 
+    @Step("Enter password")
     public LoginPage setPassword(String password) {
         passwordInput.sendKeys(password);
         return this;
     }
 
+    @Step("Click login button")
     public SecurePage clickLoginButton() {
          clickButton(loginButton);
          return new SecurePage(driver);
