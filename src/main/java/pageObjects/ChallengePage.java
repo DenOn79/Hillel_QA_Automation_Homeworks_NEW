@@ -1,5 +1,6 @@
 package pageObjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,21 +27,25 @@ public class ChallengePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Click just button")
     public ChallengePage clickButton() {
         clickButton(justButton);
         return this;
     }
 
+    @Step("Click Alert button")
     public ChallengePage clickButtonAlert() {
         clickButton(buttonAlert);
         return this;
     }
 
+    @Step("Click Success button")
     public ChallengePage clickButtonSuccess() {
         clickButton(buttonSuccess);
         return this;
     }
 
+    @Step("Print data from the 4th column")
     public ChallengePage outputTableElements() {
         for (int i = 1; i <= 10; i++) {
             String element = driver.findElement(By.xpath("//tbody/tr["+i+"]/td[4]")).getText();
